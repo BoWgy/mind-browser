@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Mind Browser 图标前景：流线 M（余弦波中段 + 直腿） -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M36,70 L36,41.5 L38,42.07 L40,43.72 L42,46.25 L44,49.35 L46,52.65 L48,55.75 L50,58.28 L52,59.93 L54,60.5 L56,59.93 L58,58.28 L60,55.75 L62,49.35 L64,46.25 L66,43.72 L68,42.07 L70,41.5 L72,41.5 L72,70"
+        android:strokeColor="#FFFFFF"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:strokeWidth="8.2" />
+</vector>

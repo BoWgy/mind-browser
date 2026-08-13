@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>新标签页</title>
+<style>
+    :root {
+        --bg-start: #fdfdfe;
+        --bg-end: #edf0f5;
+        --text: #1b1b1f;
+        --input-bg: #ffffff;
+        --input-shadow: 0 2px 14px rgba(30, 40, 80, 0.10);
+        --sub: #8a8a93;
+    }
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --bg-start: #141519;
+            --bg-end: #1b1d24;
+            --text: #e4e2e6;
+            --input-bg: #26282f;
+            --input-shadow: 0 2px 14px rgba(0, 0, 0, 0.35);
+            --sub: #8f8f99;
+        }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+        background: linear-gradient(180deg, var(--bg-start) 0%, var(--bg-end) 100%);
+        color: var(--text);
+        font-family: system-ui, sans-serif;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+        padding-bottom: 18vh; /* 视觉重心略偏上，避开底部工具栏 */
+    }
+    .logo {
+        width: 76px;
+        height: 76px;
+        border-radius: 22px;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: radial-gradient(circle at 50% 42%, #2e394e 0%, #0e1524 78%);
+        box-shadow: 0 6px 20px rgba(14, 21, 36, 0.35);
+        margin-bottom: 20px;
+    }
+    .aurora { position: absolute; border-radius: 50%; filter: blur(12px); }
+    .aurora.a1 { width: 64px; height: 64px; left: -10px; bottom: -28px; background: rgba(99, 102, 241, 0.50); }
+    .aurora.a2 { width: 54px; height: 54px; right: -8px; bottom: -18px; background: rgba(34, 211, 238, 0.40); }
+    .logo svg { position: relative; width: 52px; height: 52px; }
+    h1 {
+        font-size: 21px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        margin-bottom: 36px;
+    }
+    form { width: 100%; max-width: 560px; }
+    input[type=search] {
+        width: 100%;
+        height: 54px;
+        border: none;
+        border-radius: 27px;
+        background: var(--input-bg);
+        color: var(--text);
+        box-shadow: var(--input-shadow);
+        padding: 0 24px;
+        font-size: 16px;
+        outline: none;
+        -webkit-appearance: none;
+    }
+    input[type=search]::placeholder { color: var(--sub); }
+</style>
+</head>
+<body>
+    <div class="logo">
+        <div class="aurora a1"></div>
+        <div class="aurora a2"></div>
+        <svg viewBox="31 32.75 46 46" fill="none">
+            <path d="M36,70 L36,41.5 L38,42.07 L40,43.72 L42,46.25 L44,49.35 L46,52.65 L48,55.75 L50,58.28 L52,59.93 L54,60.5 L56,59.93 L58,58.28 L60,55.75 L62,49.35 L64,46.25 L66,43.72 L68,42.07 L70,41.5 L72,41.5 L72,70"
+                  stroke="#fff" stroke-width="8.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </div>
+    <h1>Mind Browser</h1>
+    <form action="mind://search" method="get">
+        <input type="search" id="q" name="q" placeholder="搜索或输入网址" autocomplete="off">
+    </form>
+    <script>
+        // 从结果页返回时 WebView 会按原样恢复历史页（含表单值），每次显示都清空搜索框
+        window.addEventListener('pageshow', function () {
+            document.getElementById('q').value = '';
+        });
+    </script>
+</body>
+</html>

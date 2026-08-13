@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingTop="4dp"
+    android:paddingBottom="24dp">
+
+    <LinearLayout
+        android:id="@+id/rowNewTab"
+        style="@style/MenuRow">
+
+        <ImageView
+            style="@style/MenuRowIcon"
+            android:src="@drawable/ic_menu_new_tab" />
+
+        <TextView
+            style="@style/MenuRowLabel"
+            android:text="@string/menu_new_tab" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/rowBookmarks"
+        style="@style/MenuRow">
+
+        <ImageView
+            style="@style/MenuRowIcon"
+            android:src="@drawable/ic_menu_bookmark" />
+
+        <TextView
+            style="@style/MenuRowLabel"
+            android:text="@string/menu_bookmarks" />
+    </LinearLayout>
+
+    <View style="@style/MenuRowDivider" />
+
+    <LinearLayout
+        android:id="@+id/rowBookmarkAdd"
+        style="@style/MenuRow">
+
+        <ImageView
+            android:id="@+id/bookmarkAddIcon"
+            style="@style/MenuRowIcon"
+            android:src="@drawable/ic_menu_bookmark_border" />
+
+        <TextView
+            android:id="@+id/bookmarkAddLabel"
+            style="@style/MenuRowLabel"
+            android:text="@string/menu_bookmark_add" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/rowRefresh"
+        style="@style/MenuRow">
+
+        <ImageView
+            style="@style/MenuRowIcon"
+            android:src="@drawable/ic_menu_refresh" />
+
+        <TextView
+            style="@style/MenuRowLabel"
+            android:text="@string/menu_refresh" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/rowShare"
+        style="@style/MenuRow">
+
+        <ImageView
+            style="@style/MenuRowIcon"
+            android:src="@drawable/ic_menu_share" />
+
+        <TextView
+            style="@style/MenuRowLabel"
+            android:text="@string/menu_share" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/rowCopy"
+        style="@style/MenuRow">
+
+        <ImageView
+            style="@style/MenuRowIcon"
+            android:src="@drawable/ic_menu_copy" />
+
+        <TextView
+            style="@style/MenuRowLabel"
+            android:text="@string/menu_copy_link" />
+    </LinearLayout>
+
+    <View style="@style/MenuRowDivider" />
+
+    <LinearLayout
+        android:id="@+id/rowDesktop"
+        style="@style/MenuRow">
+
+        <ImageView
+            style="@style/MenuRowIcon"
+            android:src="@drawable/ic_menu_desktop" />
+
+        <TextView
+            style="@style/MenuRowLabel"
+            android:text="@string/menu_desktop" />
+
+        <com.google.android.material.materialswitch.MaterialSwitch
+            android:id="@+id/switchDesktop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:focusable="false" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/rowBlockImages"
+        style="@style/MenuRow">
+
+        <ImageView
+            style="@style/MenuRowIcon"
+            android:src="@drawable/ic_menu_images" />
+
+        <TextView
+            style="@style/MenuRowLabel"
+            android:text="@string/menu_block_images" />
+
+        <com.google.android.material.materialswitch.MaterialSwitch
+            android:id="@+id/switchBlockImages"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:focusable="false" />
+    </LinearLayout>
+</LinearLayout>
